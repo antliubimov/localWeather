@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var gulp = require('gulp'),
     watch = require('gulp-watch'),
@@ -16,27 +16,27 @@ var gulp = require('gulp'),
 
 var path = {
     build: {
-        html: './build/',
-        js: './build/js/',
-        css: './build/css/',
-        img: './build/img/',
-        fonts: './build/fonts/'
+        html: 'build/',
+        js: 'build/js/',
+        css: 'build/css/',
+        img: 'build/img/',
+        fonts: 'build/fonts/'
     },
     src: {
-        html: './src/template/index.html',
-        js: './src/js/main.js',
-        style: './src/scss/app.scss',
-        img: './src/img/*.*',
-        fonts: './src/fonts/*.*'
+        html: 'src/template/index.html',
+        js: 'src/js/main.js',
+        style: 'src/scss/app.scss',
+        img: 'src/img/*.*',
+        fonts: 'src/fonts/*.*'
     },
     watch: {
-        html: './src/**/*.html',
-        js: './src/js/**/*.js',
-        style: './src/scss/*.scss',
-        img: './src/img/*.*',
-        fonts: './src/fonts/*.*'
+        html: 'src/template/**/*.html',
+        js: 'src/js/**/*.js',
+        style: 'src/scss/*.scss',
+        img: 'src/img/*.*',
+        fonts: 'src/fonts/*.*'
     },
-    clean: './build'
+    clean: 'build'
 };
 
 var config = {
@@ -93,10 +93,9 @@ gulp.task('image:build', function() {
         .pipe(reload({ stream: true }));
 });
 
-
 gulp.task('fonts:build', function() {
     gulp.src(path.src.fonts)
-        .pipe(gulp.dest(path.build.fonts))
+        .pipe(gulp.dest(path.build.fonts));
 });
 
 gulp.task('build', [
