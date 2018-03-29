@@ -1,3 +1,13 @@
-#temp-unit {
+.weather {
+    margin-bottom: 2em;
+    font-size: 2em
+}
+
+#tUnit:hover {
+    cursor: pointer;
+}
+
+#tUnit {
     color: blue;
+    font-size: 1.2em;
 }
