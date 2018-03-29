@@ -54,7 +54,7 @@ function getWeather(lat, lon) {
 
     xhr.open('GET', urlStr, true);
     xhr.send();
-    tUnit.addEventListener("click", toggleScale);
+
 };
 
 function cToF(celcius) {
@@ -66,13 +66,15 @@ function fToC(fahrenheit) {
 }
 
 function toggleScale() {
-    if (document.getElementsByClassName('wi wi-celsius')) {
-        temperature = cToF(temperature.innerText).toFixed(2);
-        document.getElementById('tUnit').classList.remove('wi-celsius');
-        document.getElementById('tUnit').classList.add('wi-fahrenheit');
-    } else if (document.getElementsByClassName('wi wi-fahrenheit')) {
-        temperature = fToC(temperature.innerText).toFixed(2);
-        document.getElementById('tUnit').classList.remove('wi-fahrenheit');
-        document.getElementById('tUnit').classList.add('wi-celsius');
+    if (tUnit.classList == 'wi wi-celsius') {
+        temperature.innerText = cToF(temperature.innerText).toFixed(1);
+        tUnit.classList.remove('wi-celsius');
+        tUnit.classList.add('wi-fahrenheit');
+    } else if (tUnit.classList == 'wi wi-fahrenheit') {
+        temperature.innerText = fToC(temperature.innerText).toFixed(1);
+        tUnit.classList.remove('wi-fahrenheit');
+        tUnit.classList.add('wi-celsius');
     }
 }
+
+tUnit.addEventListener("click", toggleScale);
